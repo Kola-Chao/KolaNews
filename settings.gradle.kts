@@ -27,5 +27,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KolaNews"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
  

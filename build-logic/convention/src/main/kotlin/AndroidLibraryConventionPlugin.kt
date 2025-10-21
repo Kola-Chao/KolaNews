@@ -14,8 +14,8 @@
  *   limitations under the License.
  */
 
+import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
-import com.android.build.gradle.LibraryExtension
 import com.kola.news.buildlogic.configureFlavors
 import com.kola.news.buildlogic.configureGradleManagedDevices
 import com.kola.news.buildlogic.configureKotlinAndroid
@@ -37,7 +37,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 35
+                testOptions.targetSdk = 35
+                lint.targetSdk = 35
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 testOptions.animationsDisabled = true
                 configureFlavors(this)

@@ -14,12 +14,12 @@
  *   limitations under the License.
  */
 
-package com.kola.news.buildlogic
+package com.google.samples.apps.nowinandroid
 
 import com.android.SdkConstants
 import com.android.build.api.artifact.SingleArtifact
+import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.android.build.gradle.BaseExtension
 import com.google.common.truth.Truth.assertWithMessage
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
@@ -98,7 +98,7 @@ abstract class CheckBadgingTask : DefaultTask() {
     fun taskAction() {
         assertWithMessage(
             "Generated badging is different from golden badging! " +
-                "If this change is intended, run ./gradlew ${updateBadgingTaskName.get()}",
+                    "If this change is intended, run ./gradlew ${updateBadgingTaskName.get()}",
         )
             .that(generatedBadging.get().asFile.readText())
             .isEqualTo(goldenBadging.get().asFile.readText())
@@ -110,7 +110,7 @@ private fun String.capitalized() = replaceFirstChar {
 }
 
 fun Project.configureBadgingTasks(
-    baseExtension: BaseExtension,
+    baseExtension: ApplicationExtension,
     componentsExtension: ApplicationAndroidComponentsExtension,
 ) {
     // Registers a callback to be called, when a new variant is configured
@@ -127,8 +127,8 @@ fun Project.configureBadgingTasks(
                     componentsExtension.sdkComponents.sdkDirectory.map { directory ->
                         directory.file(
                             "${SdkConstants.FD_BUILD_TOOLS}/" +
-                                "${baseExtension.buildToolsVersion}/" +
-                                SdkConstants.FN_AAPT2,
+                                    "${baseExtension.buildToolsVersion}/" +
+                                    SdkConstants.FN_AAPT2,
                         )
                     }
                 )

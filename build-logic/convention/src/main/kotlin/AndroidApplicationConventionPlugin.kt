@@ -16,8 +16,7 @@
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.android.build.gradle.BaseExtension
-import com.kola.news.buildlogic.configureBadgingTasks
+import com.google.samples.apps.nowinandroid.configureBadgingTasks
 import com.kola.news.buildlogic.configureGradleManagedDevices
 import com.kola.news.buildlogic.configureKotlinAndroid
 import com.kola.news.buildlogic.configurePrintApksTask
@@ -44,7 +43,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
             extensions.configure<ApplicationAndroidComponentsExtension> {
                 configurePrintApksTask(this)
-                configureBadgingTasks(extensions.getByType<BaseExtension>(), this)
+                configureBadgingTasks(extensions.getByType<ApplicationExtension>(), this)
             }
         }
     }

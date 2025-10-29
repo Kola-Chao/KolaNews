@@ -31,7 +31,11 @@ rootProject.name = "KolaNews"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+include(":core:designsystem")
+include(":core:ui")
 include(":core:testing")
+include(":feature:home")
+include(":feature:profile")
 
 
 check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {

@@ -93,6 +93,10 @@ dependencies {
     implementation(libs.kotlinx.coroutines.guava)
     implementation(libs.coil.kt)
     implementation(libs.kotlinx.serialization.json)
+    implementation(projects.core.designsystem)
+    implementation(projects.core.ui)
+    implementation(projects.feature.home)
+    implementation(projects.feature.profile)
 
     ksp(libs.hilt.compiler)
 

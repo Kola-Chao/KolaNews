@@ -14,7 +14,6 @@
  *   limitations under the License.
  */
 
-import com.android.build.gradle.LibraryExtension
 import com.kola.news.buildlogic.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -27,7 +26,7 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
             apply(plugin = "com.android.library")
             apply(plugin = "org.jetbrains.kotlin.plugin.compose")
 
-            val extension = extensions.getByType<LibraryExtension>()
+            val extension = extensions.getByType<com.android.build.api.dsl.LibraryExtension>()
             configureAndroidCompose(extension)
         }
     }

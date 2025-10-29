@@ -3,11 +3,11 @@ accompanist = "0.37.0"
 androidDesugarJdkLibs = "2.1.4"
 # AGP and tools should be updated together
 androidGradlePlugin = "8.12.3"
-androidTools = "31.7.3"
+androidTools = "31.12.2"
 androidxActivity = "1.9.3"
 androidxAppCompat = "1.7.0"
 androidxBrowser = "1.8.0"
-androidxComposeBom = "2025.02.00"
+androidxComposeBom = "2025.08.01"
 androidxComposeFoundation = "1.8.0-alpha07"
 androidxComposeMaterial3Adaptive = "1.1.0-rc01"
 androidxComposeRuntimeTracing = "1.7.6"
@@ -22,10 +22,10 @@ androidxMacroBenchmark = "1.3.4"
 androidxMetrics = "1.0.0-beta01"
 androidxNavigation = "2.8.5"
 androidxProfileinstaller = "1.4.1"
-androidxTestCore = "1.6.1"
-androidxTestExt = "1.2.1"
-androidxTestRules = "1.6.1"
-androidxTestRunner = "1.6.2"
+androidxTestCore = "1.7.0-rc01"
+androidxTestExt = "1.3.0-rc01"
+androidxTestRules = "1.7.0-rc01"
+androidxTestRunner = "1.7.0-rc01"
 androidxTracing = "1.3.0-alpha02"
 androidxUiAutomator = "2.3.0"
 androidxWindowManager = "1.3.0"
@@ -33,8 +33,8 @@ androidxWork = "2.10.0"
 coil = "2.7.0"
 dependencyGuard = "0.5.0"
 firebaseBom = "33.7.0"
-firebaseCrashlyticsPlugin = "3.0.2"
-firebasePerfPlugin = "1.4.2"
+firebaseCrashlyticsPlugin = "3.0.6"
+firebasePerfPlugin = "2.0.1"
 gmsPlugin = "4.4.2"
 googleOss = "17.1.0"
 googleOssPlugin = "0.10.8"
@@ -47,7 +47,6 @@ kotlinxCoroutines = "1.10.1"
 kotlinxDatetime = "0.6.1"
 kotlinxSerializationJson = "1.8.0"
 ksp = "2.1.10-1.0.31"
-moduleGraph = "2.7.1"
 okhttp = "4.12.0"
 protobuf = "4.29.2"
 protobufPlugin = "0.9.4"
@@ -55,8 +54,7 @@ retrofit = "2.11.0"
 retrofitKotlinxSerializationJson = "1.0.0"
 robolectric = "4.14.1"
 roborazzi = "1.39.0"
-room = "2.6.1"
-secrets = "2.0.1"
+room = "2.7.2"
 truth = "1.4.4"
 turbine = "1.2.0"
 
@@ -152,6 +150,7 @@ truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 
 # Dependencies of the included build-logic
+android-gradleApiPlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "androidGradlePlugin" }
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
@@ -166,7 +165,7 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 android-lint = { id = "com.android.lint", version.ref = "androidGradlePlugin" }
 android-test = { id = "com.android.test", version.ref = "androidGradlePlugin" }
-baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark" }
+baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacroBenchmark"}
 compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
@@ -176,25 +175,24 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-module-graph = { id = "com.jraska.module.graph.assertion", version.ref = "moduleGraph" }
+google-osslicenses = { id = "com.google.android.gms.oss-licenses-plugin", version.ref = "googleOssPlugin" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 room = { id = "androidx.room", version.ref = "room" }
-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
-google-osslicenses = { id = "com.google.android.gms.oss-licenses-plugin", version.ref = "googleOssPlugin" }
 
 # Plugins defined by this project
-nowinandroid-android-application = { id = "nowinandroid.android.application", version = "unspecified" }
-nowinandroid-android-application-compose = { id = "nowinandroid.android.application.compose", version = "unspecified" }
-nowinandroid-android-application-firebase = { id = "nowinandroid.android.application.firebase", version = "unspecified" }
-nowinandroid-android-application-flavors = { id = "nowinandroid.android.application.flavors", version = "unspecified" }
-nowinandroid-android-application-jacoco = { id = "nowinandroid.android.application.jacoco", version = "unspecified" }
-nowinandroid-android-feature = { id = "nowinandroid.android.feature", version = "unspecified" }
-nowinandroid-android-library = { id = "nowinandroid.android.library", version = "unspecified" }
-nowinandroid-android-library-compose = { id = "nowinandroid.android.library.compose", version = "unspecified" }
-nowinandroid-android-library-jacoco = { id = "nowinandroid.android.library.jacoco", version = "unspecified" }
-nowinandroid-android-lint = { id = "nowinandroid.android.lint", version = "unspecified" }
-nowinandroid-android-room = { id = "nowinandroid.android.room", version = "unspecified" }
-nowinandroid-android-test = { id = "nowinandroid.android.test", version = "unspecified" }
-nowinandroid-hilt = { id = "nowinandroid.hilt", version = "unspecified" }
-nowinandroid-jvm-library = { id = "nowinandroid.jvm.library", version = "unspecified" }
+nowinandroid-android-application = { id = "nowinandroid.android.application" }
+nowinandroid-android-application-compose = { id = "nowinandroid.android.application.compose" }
+nowinandroid-android-application-firebase = { id = "nowinandroid.android.application.firebase" }
+nowinandroid-android-application-flavors = { id = "nowinandroid.android.application.flavors" }
+nowinandroid-android-application-jacoco = { id = "nowinandroid.android.application.jacoco" }
+nowinandroid-android-feature = { id = "nowinandroid.android.feature" }
+nowinandroid-android-library = { id = "nowinandroid.android.library" }
+nowinandroid-android-library-compose = { id = "nowinandroid.android.library.compose" }
+nowinandroid-android-library-jacoco = { id = "nowinandroid.android.library.jacoco" }
+nowinandroid-android-lint = { id = "nowinandroid.android.lint" }
+nowinandroid-android-room = { id = "nowinandroid.android.room" }
+nowinandroid-android-test = { id = "nowinandroid.android.test" }
+nowinandroid-hilt = { id = "nowinandroid.hilt" }
+nowinandroid-jvm-library = { id = "nowinandroid.jvm.library" }
+nowinandroid-root = { id = "nowinandroid.root" }

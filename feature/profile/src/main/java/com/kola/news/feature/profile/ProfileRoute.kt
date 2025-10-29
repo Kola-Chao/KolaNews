@@ -49,6 +49,7 @@ internal fun ProfileScreen(modifier: Modifier = Modifier) {
 }
 
 @Preview
+@Composable
 private fun ProfileScreenPreview() {
     KolaNewsTheme {
         ProfileScreen()

@@ -14,7 +14,6 @@
  *   limitations under the License.
  */
 
-import com.android.build.gradle.LibraryExtension
 import com.kola.news.buildlogic.configureGradleManagedDevices
 import com.kola.news.buildlogic.libs
 import org.gradle.api.Plugin
@@ -22,6 +21,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import kotlin.text.get
 
 class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -30,7 +30,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             apply(plugin = "nowinandroid.hilt")
             apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
-            extensions.configure<LibraryExtension> {
+            extensions.configure<com.android.build.api.dsl.LibraryExtension> {
                 testOptions.animationsDisabled = true
                 configureGradleManagedDevices(this)
             }

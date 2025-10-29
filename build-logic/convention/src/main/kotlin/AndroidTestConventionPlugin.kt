@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-import com.android.build.gradle.TestExtension
+import com.android.build.api.dsl.TestExtension
 import com.kola.news.buildlogic.configureGradleManagedDevices
 import com.kola.news.buildlogic.configureKotlinAndroid
 import org.gradle.api.Plugin

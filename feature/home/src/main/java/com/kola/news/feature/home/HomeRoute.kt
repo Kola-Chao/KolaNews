@@ -49,6 +49,7 @@ internal fun HomeScreen(modifier: Modifier = Modifier) {
 }
 
 @Preview
+@Composable
 private fun HomeScreenPreview() {
     KolaNewsTheme {
         HomeScreen()

@@ -13,12 +13,14 @@ class HomeScreenTest {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun homeScreen_displaysWelcomeMessage() {
+    fun homeScreen_displaysWelcomeMessages() {
         composeTestRule.setContent {
             KolaNewsTheme {
                 HomeScreen()
             }
         }
+
+        composeTestRule.waitForIdle()
 
         composeTestRule.onNodeWithText("Welcome to KolaNews").assertIsDisplayed()
         composeTestRule

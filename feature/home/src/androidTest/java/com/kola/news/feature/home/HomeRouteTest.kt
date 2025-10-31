@@ -24,6 +24,8 @@ class HomeRouteTest {
             }
         }
 
+        composeTestRule.waitForIdle()
+
         composeTestRule.onNodeWithText("Welcome to KolaNews").assertIsDisplayed()
         composeTestRule
             .onNodeWithText("Catch up with curated stories on your home feed.")
